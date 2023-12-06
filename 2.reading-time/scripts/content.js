@@ -1,4 +1,4 @@
-const article = document.querySelector("article");
+const article = document.querySelector('article');
 
 if (article) {
 	const text = article.textContent;
@@ -9,14 +9,12 @@ if (article) {
 	const readingTime = Math.round(wordCount / 200);
 	const badge = document.createElement("p");
 	// Use the same styling as the publish information in an article's header
-	badge.classList.add("color-secondary-text", "type--caption");
+	badge.classList.add('color-secondary-text', 'type--caption');
 	badge.style.border = '10px solid red';
-	badge.textContent = `⏱️ ${readingTime} min read`;
-
+	badge.textContent = `⏱️ 阅读此段落大概需要 ${readingTime} 分钟`;
 	// Support for API reference docs
-	const heading = article.querySelector("h1");
+	const heading = article.querySelector('h1');
 	// Support for article docs with date
-	const date = article.querySelector("time")?.parentNode;
-
-	(date ?? heading).insertAdjacentElement("afterend", badge);
+	const date = article.querySelector('time')?.parentNode;
+	(date ?? heading).insertAdjacentElement('afterend', badge);
 }
