@@ -130,7 +130,20 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             case 'generateReport':
                 console.log('sender', sender);
                 const token = await getToken();
-                const content = `以下是我这周的工作内容，帮我总结一篇周报\n${ request.content }`;
+                const date = new Date();
+                date.setDate(date.getDate() - date.getDay() + 1);
+                const startYear = date.getFullYear();
+                const startMonth = date.getMonth() + 1;
+                const startDate = date.getDate();
+                date.setDate(date.getDate() + 4);
+                const endYear = date.getFullYear();
+                const endMonth = date.getMonth() + 1;
+                const endDate = date.getDate();
+                const content = `
+                    本周上班时间是 ${ startYear }年${ startMonth }月${ startDate }日 - ${ endYear }年${ endMonth }月${ endDate }日
+                    以下是我这周的工作内容，帮我总结一篇周报
+                    ${ request.content }
+                `;
                 const report = await sendMessage(content, 'user', token);
                 sendResponse({ result: report });
         }

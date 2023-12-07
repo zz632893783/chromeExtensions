@@ -34,8 +34,14 @@ const monthMap = [
     loadingMask.style.right = 0;
     loadingMask.style.bottom = 0;
     loadingMask.style.left = 0;
-    loadingMask.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    loadingMask.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+    loadingMask.style.fontSize = '100px';
+    loadingMask.style.display = 'grid';
+    loadingMask.style.alignItems = 'center';
+    loadingMask.style.justifyContent = 'center';
+    loadingMask.style.color = 'white';
     loadingMask.style.zIndex = 10e9;
+    loadingMask.innerHTML = '生成中...';
     document.body.appendChild(loadingMask);
     let observer;
     await new Promise(resolve => {
@@ -67,5 +73,8 @@ const monthMap = [
         return (thisweekDateRange.find(n => n.label === month && Number(n.date) === Number(date))) ? content : '';
     }).filter(n => !!n.trim()).join(';');
     const response = await chrome.runtime.sendMessage({ command: 'generateReport', content: thisWeekContent });
-    console.log(response.result);
+    loadingMask.style.fontSize = '14px';
+    loadingMask.style.display = 'block';
+    loadingMask.style.padding = '32px';
+    loadingMask.innerHTML = response.result.replace('\n', '<br />');
 })();
