@@ -76,5 +76,5 @@ const monthMap = [
     loadingMask.style.fontSize = '14px';
     loadingMask.style.display = 'block';
     loadingMask.style.padding = '32px';
-    loadingMask.innerHTML = response.result.replace('\n', '<br />');
+    loadingMask.innerHTML = response.result.replace(/\n/g, '<br />');
 })();

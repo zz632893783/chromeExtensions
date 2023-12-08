@@ -1,21 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "Action Extension",
+  "name": "周报生成器",
   "version": "1.0",
   "icons": {
-    "16": "images/report2.png",
-    "32": "images/report2.png",
-    "48": "images/report2.png",
-    "128": "images/report2.png"
+    "16": "images/duck.png",
+    "32": "images/duck.png",
+    "48": "images/duck.png",
+    "128": "images/duck.png"
   },
   "action": {
     "default_icon": {
-      "16": "images/report2.png",
-      "32": "images/report2.png",
-      "48": "images/report2.png",
-      "128": "images/report2.png"
+      "16": "images/duck.png",
+      "32": "images/duck.png",
+      "48": "images/duck.png",
+      "128": "images/duck.png"
     },
-    "default_title": "Click Me"
+    "default_title": "傻瓜式一件周报生成器，需要事先登录禅道"
   },
   "permissions": ["activeTab", "scripting"],
   "host_permissions": [
