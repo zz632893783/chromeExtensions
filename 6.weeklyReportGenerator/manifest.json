@@ -3,17 +3,17 @@
   "name": "周报生成器",
   "version": "1.0",
   "icons": {
-    "16": "images/duck.png",
-    "32": "images/duck.png",
-    "48": "images/duck.png",
-    "128": "images/duck.png"
+    "16": "images/report3.png",
+    "32": "images/report3.png",
+    "48": "images/report3.png",
+    "128": "images/report3.png"
   },
   "action": {
     "default_icon": {
-      "16": "images/duck.png",
-      "32": "images/duck.png",
-      "48": "images/duck.png",
-      "128": "images/duck.png"
+      "16": "images/report3.png",
+      "32": "images/report3.png",
+      "48": "images/report3.png",
+      "128": "images/report3.png"
     },
     "default_title": "傻瓜式一件周报生成器，需要事先登录禅道"
   },
